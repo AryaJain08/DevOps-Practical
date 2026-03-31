@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Symbiosis Admission Form</title>
+
+<!-- External CSS -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Internal CSS -->
+<style>
+h2{
+text-align:center;
+color:darkblue;
+}
+</style>
+
+<script>
+function validateForm(){
+
+let name=document.forms["form1"]["name"].value;
+let email=document.forms["form1"]["email"].value;
+let password=document.forms["form1"]["password"].value;
+let confirm=document.forms["form1"]["confirm"].value;
+
+if(name==""){
+alert("Name must be filled out");
+return false;
+}
+
+if(email==""){
+alert("Email must be filled out");
+return false;
+}
+
+if(password.length<6){
+alert("Password must be at least 6 characters");
+return false;
+}
+
+if(password!=confirm){
+alert("Passwords do not match");
+return false;
+}
+
+return true;
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Symbiosis Admission Registration Form</h2>
+
+<form name="form1" onsubmit="return validateForm()">
+
+<label>Name:</label>
+<input type="text" name="name">
+
+<label>Email ID:</label>
+<input type="email" name="email">
+
+<label>Password:</label>
+<input type="password" name="password">
+
+<label>Confirm Password:</label>
+<input type="password" name="confirm">
+
+<label>Gender:</label>
+<input type="checkbox"> Male
+<input type="checkbox"> Female
+<input type="checkbox"> Other
+
+<br><br>
+
+<label>Course:</label>
+
+<select>
+<option>Select Course</option>
+<option>BCA</option>
+<option>BBA</option>
+<option>B.Tech</option>
+<option>MCA</option>
+</select>
+
+<br><br>
+
+<button type="submit">Register</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #333;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  font-weight: 500;
+  color: #555;
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 8px;
+  border: 2px solid #e1e5e9;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+  transform: translateY(-2px);
+}
+
+select {
+  background-image: linear-gradient(45deg, transparent 50%, #007bff 0), linear-gradient(135deg, #007bff 50%, transparent 0);
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 13px) calc(1em + 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  appearance: none;
+}
+
+/* Gender Checkboxes */
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+  margin-top: 15px;
+  transform: scale(1.2);
+  accent-color: #007bff;
+}
+
+label[for="gender"] {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gender-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 8px;
+}
+
+.gender-group label {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 15px;
+}
+
+button {
+  margin-top: 25px;
+  padding: 15px;
+  width: 100%;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,123,255,0.3);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,123,255,0.4);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 20px;
+    margin: 10px;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+  
+  input, select, button {
+    font-size: 18px; /* Touch-friendly */
+  }
+}
+
+/* Form group wrapper for better spacing */
+form > div {
+  margin-bottom: 20px;
+}
+
